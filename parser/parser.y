@@ -1452,6 +1452,10 @@ default_val:
   {
     $$ = NewStrVal($1)
   }
+| STRING TYPECAST DOUBLE PRECISION
+  {
+    $$ = NewStrVal($1)
+  }
 | function_call_generic
   {
     $$ = NewStrVal([]byte($1.(*FuncExpr).Name.val))
